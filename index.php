@@ -83,12 +83,12 @@ require_once("Classes/Database.php");
 
         } else { //Eφόσον έχει ληφθεί post φόρμας με μεταβλητές
 
-            $ergazomenos = new Ergazomenos(); //Νέο αντικείμενο Credentials
+            $ergazomenos = new Ergazomenos(); //Νέο αντικείμενο Ergazomenos.
             //Με εκχώρηση των username και password τις τιμές των αντίστοιχων μεταβλητών απο Post.
             $ergazomenos->alias = $_POST['username'];
             $ergazomenos->crypto = $_POST['password'];
 
-            $ergazomenos->login(); //Εκτέλεση της συνάρτησης login() της κλάσσης Credentials
+            $ergazomenos->login(); //Εκτέλεση της συνάρτησης login() της κλάσσης Ergazomenos
 
             if ($ergazomenos->kwd_ergazomenou !== -1) { //Έλεγχος αν έχει βρεθεί εγγραφή στην ΒΔ κι έτσι δεν έχει την αρχική τιμή της Construct() δλδ -1
 
@@ -109,43 +109,8 @@ require_once("Classes/Database.php");
 
     else { //Όταν ο χρήστης έχει συνδεθεί επιτυχώς.
 
-        ?>
-
-    <body id="home">
-    <div class="container tm-home-mt tm-home-container">
-        <div class="row">
-            <div class="col-12">
-                <div class="tm-home-mt">
-                    <h1 class="tm-site-title">Εταιρεία Cloup</h1>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-20 col-lg-20 col-md-20 col-sm-20">
-                <div class="tm-home-mt mt-3 font-weight-light">
-                    <h5 class="tm-mb-35">Συγχαρητήρια! Είστε συνδεδεμένοι στην Cloup SA</h5>
-                </div>
-            </div>
-
-
-            <div  class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                <a href="logout.php" class="waves-effect btn-large btn-large-white px-4 black-text rounded-0">Αποσύνδεση</a>
-            </div>
-        </div>
-    </div>
-
-    <footer class="row tm-mt-big mb-3">
-        <div class="col-xl-12 text-center">
-            <p class="d-inline-block tm-bg-black white-text py-2 tm-px-5">
-                Crafted by <a rel="nofollow" href="https://github.com/d4t4k1ng" class="tm-footer-link">D4t4k1ng</a> &copy; 2020
-            </p>
-        </div>
-    </footer>
-    </body>
-</html>
-
-
-<?php
+      header('location: LoggedInPage.php');//Όταν τοποθετηθεί σε web server θα δωθεί η σωστή τοποθεσία του redirection
+               
 }
 ?>
 

@@ -46,6 +46,23 @@ class Database
 
 
         }
+    } //end of login
+    
+    
+    
+     public function setErgazomenos($ergazomenos) {
+        $this->connect();
+        $sql = "INSERT INTO `ergazomenos`(`Eponymo_ergazom`,"
+                . " `Onoma_Ergazom`, `Patronymo_Ergazom`, `Fyllo_Ergaz`, `AFM_Ergaz`,"
+                . " `DOB_Ergazom`, `Tel_Ergaz`, `Salary_Ergazom`, `Kod_tm_ergazom`, "
+                . "`user_type_ergazom`, `alias`, `crypto`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+        $this->execute($sql, [$ergazomenos->Eponymo_ergazom,
+            $ergazomenos->Onoma_Ergazom,$ergazomenos->Patronymo_Ergazom,
+            $ergazomenos->Fyllo_Ergaz,$ergazomenos->AFM_Ergaz,
+            $ergazomenos->DOB_Ergazom,$ergazomenos->Tel_Ergaz,
+            $ergazomenos->Salary_Ergazom,$ergazomenos->Kod_tm_ergazom,
+            $ergazomenos->user_type_ergazom,$ergazomenos->alias,
+            $ergazomenos->crypto]);
     }
 
 

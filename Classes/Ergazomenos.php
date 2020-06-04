@@ -48,6 +48,11 @@ class Ergazomenos
         $DB = new Database();
         $DB->getErgazomenos($this);
     }
+    
+    function setDb() {
+        $DB = new Database();
+        $DB->setErgazomenos($this);
+    }
         
   
 } //Class Ergazomenos ends here
