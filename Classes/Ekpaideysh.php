@@ -11,4 +11,9 @@ class Ekpaideysh {
         $this->vathmos = "";
         $this->date_apokthshs = 0000-00-00;  
     }
+    
+    function setDbE() {
+        $DB = new Database();
+        $DB->setEkpaideysh($this);
+    }
 }//Class Ekpaideysh ends here

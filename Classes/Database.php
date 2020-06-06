@@ -64,11 +64,43 @@ class Database
             $ergazomenos->user_type_ergazom,$ergazomenos->alias,
             $ergazomenos->crypto]);
     }
+	
+	public function setEkpaideysh($degree) {
+        $this->connect();
+        $sql = "INSERT INTO `ekpaideysh`(`per_ptyxiou`, `vathmos`," 
+                ."`date_apokthshs`) VALUES (?,?,?)";
+        $this->execute($sql, [$degree->per_ptyxiou,
+            $degree->vathmos,$degree->date_apokthshs]);
+    }
+	
+	 public function setErgο($ergο) {
+        $this->connect();
+        $sql = "INSERT INTO `ergo`(`perigrafh_ergou`,`start_date`, `finish_date`) VALUES (?,?,?)";
+        $this->execute($sql, [$ergο->perigrafh_ergou, $ergο->start_date, $ergο->finish_date]);
+    }
+	
+	public function  setOxima($oxima){
+        $this->connect();
+        $sql = "INSERT INTO `oxhma`(`ar_kykloforias`, `xroma_oxhm`, `montelo_oxhm`,"
+                . " `marka_oxhm`, `odhgos`) VALUES(?,?,?,?,?) ";
+        $this->execute($sql, [$oxima->ar_kykloforias,
+            $oxima->xroma_oxhm, $oxima->montelo_oxhm,
+            $oxima->marka_oxhm,$oxima->odhgos    
+            ]);
+    }
+
+    public function setEksartomenos($exartomenos){
+        $this->connect();
+        $sql = "INSERT INTO `eksartomenos`(`AMKA_eksart`, `Onoma_eksart`,"
+                . " `Eponymo_eksart`, `DOB_eksart`, `Fylo_eksart`, "
+                . "`kod_prostati`) VALUES(?,?,?,?,?,?) ";
+        $this->execute($sql, [
+            $exartomenos->AMKA_eksart, $exartomenos->Onoma_eksart,
+            $exartomenos->Eponymo_eksart , $exartomenos->DOB_eksart,
+            $exartomenos->Fylo_eksart,$exartomenos->kod_prostati
+        ]);
+    }
 
 
-   
-    
-    
-    
     
 }//end of class Database

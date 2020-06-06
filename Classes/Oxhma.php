@@ -13,4 +13,16 @@ class Oxhma {
         $this->marka_oxhm = "";
         $this->odhgos = -1;
     }
+    
+    
+    
+     function getDb() {
+        $DB = new Database();
+        $DB->getOxima($this);
+    }
+    
+    function setDb() {
+        $DB = new Database();
+        $DB->setOxima($this);
+    }
 }//Class Oxhma ends here

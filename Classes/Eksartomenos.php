@@ -17,5 +17,15 @@ class Eksartomenos {
     $this->kod_prostati = -1;
    }
    
+    function getDb() {
+        $DB = new Database();
+        $DB->getEksartomenos($this);
+    }
+    
+    function setDb() {
+        $DB = new Database();
+        $DB->setEksartomenos($this);
+    }
+   
 }//Class Eksartomenos ends here.
 

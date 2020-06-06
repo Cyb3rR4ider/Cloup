@@ -1,0 +1,35 @@
+body{
+          padding: 40px 200px;
+      
+    }
+    button[type="submit"]{
+        margin-left: 10px;
+    }
+    form button{
+        margin-top: 10px;
+    }
+ form {
+        background-color: lightcyan;
+        border-radius: 15px;
+        margin: 10px;
+        padding: 17px;
+        text-align: center;
+        height: auto;
+    }
+.form-group{
+          align-content: center;
+          display:inline-block;
+          width:33%;
+          padding: 2px 10px 2px 10px;
+          float: left;
+          margin: 0 auto;
+     }
+     .form-header{
+         text-align: center;
+         color:lightskyblue;
+         margin-bottom: 20px;
+         text-decoration: underline;
+     }
+     .clear-float{
+         clear:left;
+     }

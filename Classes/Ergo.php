@@ -11,4 +11,10 @@ class Ergo {
         $this->finish_date = 0000-00-00;
         $this->start_date = 0000-00-00;  
     }
+    
+    
+    function setDb() {
+        $DB = new Database();
+        $DB->setErgο($this);
+    }
 }//Class Ergo ends here
