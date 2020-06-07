@@ -5,6 +5,11 @@ session_start();
 //Δηλώνω τις κλάσεις που θα χρειαστώ στην εφαρμογή μου
 require_once("Classes/Ergazomenos.php");
 require_once("Classes/Database.php");
+require_once("Classes/Ergo.php");
+
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
     ?>
 <!--Σχεδίαση της κεντρικής σελίδας της εφαρμογής -->
@@ -25,6 +30,7 @@ require_once("Classes/Database.php");
     if (!isset($_SESSION['username'])) { //Έλεγχος αν ο χρήστης είναι συνδεδεμένος στην εφαρμογή.
 
         if (!isset($_POST['username'])) { //Έλεγχος αν έχει έρθει post με στοιχεία εισόδου,συγκεκριμένα με username
+        
             ?>
             <body id="login">
             <div class="container">
@@ -55,16 +61,11 @@ require_once("Classes/Database.php");
                         </header>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ml-auto mr-0 text-center">
-                        <a href="signup.php" target="_blank" class="waves-effect btn-large btn-large-white px-4 black-text rounded-0">Αίτηση
-                            Εγγραφής</a>
-                    </div>
-                </div>
+              
                 <footer class="row tm-mt-big mb-3">
                     <div class="col-xl-12 text-center">
                         <p class="d-inline-block tm-bg-black white-text py-2 tm-px-5">
-                            Crafted by <a rel="nofollow" href="https://github.com/d4t4k1ng" class="tm-footer-link">D4t4k1ng</a>
+                            Crafted by <a rel="nofollow" href="https://github.com/" class="tm-footer-link">To nickname sas</a>
                             &copy; 2020
                         </p>
                     </div>
@@ -94,6 +95,12 @@ require_once("Classes/Database.php");
 
                 $_SESSION['username'] = $ergazomenos->alias;
                 $_SESSION['kwd_ergazomenou'] = $ergazomenos->kwd_ergazomenou;
+                $ergazomenos->getDb();
+                $_SESSION['user_type_ergazom']=$ergazomenos->user_type_ergazom;
+                
+                
+                
+                             
 
                 //Μεταφερόμαστε στην Index σελίδα
                 header('location: index.php'); //Όταν τοποθετηθεί σε web server θα δωθεί η σωστή τοποθεσία του redirection

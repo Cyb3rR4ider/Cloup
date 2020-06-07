@@ -17,4 +17,10 @@ class Ergo {
         $DB = new Database();
         $DB->setErgο($this);
     }
+    
+     function getDb() {
+        $DB = new Database();
+        $DB->getErgο($this);
+    }
+    
 }//Class Ergo ends here

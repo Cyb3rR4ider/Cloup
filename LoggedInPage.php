@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,26 +17,36 @@
 <div class="container">
   <ul class="nav nav-tabs">
     <li class="active"><a href="#">Home</a></li>
+    
+    <?php
+    if ($_SESSION['user_type_ergazom']==1) {
+    
+    ?>
     <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Εργαζόμενοι<span class="caret"></span></a>
       <ul class="dropdown-menu">
         <li><a href="Functions/Ergazomenoi/AddErgazomenos.php">Προσθήκη Εργαζόμενου</a></li>
-        <li><a href="#">Submenu 1-2</a></li>
+        <li><a href="Functions/ExartomenaMeloi/AddExartomenoMelos.php">Προσθήκη Εξαρτώμενου Μέλους</a></li>
         <li><a href="#">Submenu 1-3</a></li>                        
       </ul>
     </li>
+    <?php
+    }
+    ?>
+    
+    
     <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Έργα <span class="caret"></span></a>
       <ul class="dropdown-menu">
-        <li><a href="#">Submenu 2-1</a></li>
-        <li><a href="#">Submenu 2-2</a></li>
+        <li><a href="Functions/Erga/AddErgo.php">Προσθήκη Έργου</a></li>
+        <li><a href="Functions/Erga/ViewAllErga.php">Προβολή Όλων των Έργων</a></li>
         <li><a href="#">Submenu 2-3</a></li>                        
       </ul>
     </li>
     <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Οχήματα <span class="caret"></span></a>
       <ul class="dropdown-menu">
-        <li><a href="#">Submenu 3-1</a></li>
+          <li><a href="Functions/Ohimata/AddOhima.php">Προσθήκη Οχήματος</a></li>
         <li><a href="#">Submenu 2-2</a></li>
         <li><a href="#">Submenu 1-3</a></li>                        
       </ul>

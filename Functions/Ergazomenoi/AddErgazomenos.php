@@ -123,7 +123,7 @@ if (!isset($_POST['AddUser'])) { ?>
 <?php 
 
                     }
-                    else { //Μόλις πατήσω το κουμπί Προσθήκη Εργαζομένου (Στα Post )
+                    else { //Μόλις πατήσω το κουμπί Προσθήκη Εργαζομένου
                         $worker=new Ergazomenos();
                         $worker->AFM_Ergaz=$_POST["AFM_Ergaz"];
                         $worker->DOB_Ergazom=$_POST["DOB_Ergazom"];

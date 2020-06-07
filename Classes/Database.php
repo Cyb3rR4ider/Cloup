@@ -43,6 +43,7 @@ class Database
         if ($res->rowCount() == 1) {
             $row = $res->fetch();
             $U->kwd_ergazomenou = $row['kwd_ergazomenou'];
+            $U->user_type_ergazom=$row['user_type_ergazom'];
 
 
         }
@@ -100,7 +101,55 @@ class Database
             $exartomenos->Fylo_eksart,$exartomenos->kod_prostati
         ]);
     }
-
+    
+      public function getErgazomenos(&$ergazomenos) {
+        $this->connect();
+        $res = $this->execute("SELECT `kwd_ergazomenou`, `Eponymo_ergazom`,"
+                . " `Onoma_Ergazom`, `Patronymo_Ergazom`, "
+                . "`Fyllo_Ergaz`, `AFM_Ergaz`, `DOB_Ergazom`, `Tel_Ergaz`, "
+                . "`Salary_Ergazom`, `Kod_tm_ergazom`, `user_type_ergazom`, `alias` "
+                . "FROM `ergazomenos` WHERE kwd_ergazomenou = ?", [$ergazomenos->kwd_ergazomenou]);
+        $row = $res->fetch();
+        $ergazomenos->kwd_ergazomenou = $row['kwd_ergazomenou'];
+        $ergazomenos->Eponymo_ergazom = $row['Eponymo_ergazom'];
+        $ergazomenos->Onoma_Ergazom = $row['Onoma_Ergazom'];
+        $ergazomenos->Patronymo_Ergazom = $row['Patronymo_Ergazom'];
+        $ergazomenos->Fyllo_Ergaz = $row['Fyllo_Ergaz'];
+        $ergazomenos->AFM_Ergaz = $row['AFM_Ergaz'];
+        $ergazomenos->DOB_Ergazom = $row['DOB_Ergazom'];
+        $ergazomenos->Tel_Ergaz = $row['Tel_Ergaz'];
+        $ergazomenos->Salary_Ergazom = $row['Salary_Ergazom'];
+        $ergazomenos->Kod_tm_ergazom = $row['Kod_tm_ergazom'];
+        $ergazomenos->user_type_ergazom = $row['user_type_ergazom'];
+        $ergazomenos->alias = $row['alias'];
+        
+        
+    }
+    
+    public function getErgο(&$ergo) {
+        $this->connect();
+        $res = $this->execute("SELECT `kwd_ergou`, `perigrafh_ergou`,"
+                . " `finish_date`, `start_date` FROM `ergo` "
+                . "WHERE `kwd_ergou`= ?", [$ergo->kwd_ergou]);
+        $row = $res->fetch();
+        $ergo->kwd_ergou = $row['kwd_ergou'];
+        $ergo->perigrafh_ergou = $row['perigrafh_ergou'];
+        $ergo->finish_date = $row['finish_date'];
+        $ergo->start_date = $row['start_date'];
+          
+    }
+    
+    public function getOxima($oxima){
+        $this->connect();
+        $sql = "SELECT `ar_kykloforias`, `xroma_oxhm`, `montelo_oxhm`, `marka_oxhm`, `odhgos` FROM `oxhma` WHERE = ?";
+        $res = $this->execute($sql, [$oxima->ar_kykloforias]);
+        $row= $res.fetch();
+        $oxima->ar_kykloforias   = $row["ar_kykloforias"];
+        $oxima->xroma_oxhm = $row['xroma_oxhm'];
+        $oxima->montelo_oxhm = $row['montelo_oxhm'];
+        $oxima->marka_oxhm = $row['marka_oxhm'];
+        $oxima->odhgos =$row['odhgos'];
+    }
 
     
 }//end of class Database
