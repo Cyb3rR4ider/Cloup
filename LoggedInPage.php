@@ -27,7 +27,7 @@ session_start();
       <ul class="dropdown-menu">
         <li><a href="Functions/Ergazomenoi/AddErgazomenos.php">Προσθήκη Εργαζόμενου</a></li>
         <li><a href="Functions/ExartomenaMeloi/AddExartomenoMelos.php">Προσθήκη Εξαρτώμενου Μέλους</a></li>
-        <li><a href="#">Submenu 1-3</a></li>                        
+        <li><a href="Functions/Ergazomenoi/SearchErgazomenos.php">Αναζήτηση Εργαζόμενου</a></li>                     
       </ul>
     </li>
     <?php

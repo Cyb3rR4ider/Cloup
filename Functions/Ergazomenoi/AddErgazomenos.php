@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once '../../Classes/Ergazomenos.php';
 require_once '../../Classes/Database.php';
 
