@@ -150,6 +150,18 @@ class Database
         $oxima->marka_oxhm = $row['marka_oxhm'];
         $oxima->odhgos =$row['odhgos'];
     }
+    
+     public function updateErgo($ergo) {
+        $this->connect();
+        $sql = "UPDATE `ergo` SET ";
+        $sql .= " `kwd_ergou` = ?, ";
+        $sql .= " `perigrafh_ergou` = ? ,";
+        $sql .= " `start_date` = ?, ";
+        $sql .= " `finish_date` = ? ";
+        $sql .= "WHERE `kwd_ergou` = ?";
+        $this->execute($sql, [$ergo->kwd_ergou, $ergo->perigrafh_ergou,$ergo->start_date,$ergo->finish_date,$ergo->kwd_ergou]);
+        
+    }
 
     
 }//end of class Database

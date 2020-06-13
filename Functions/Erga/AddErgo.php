@@ -15,7 +15,7 @@ if (!isset($_POST['AddErgo'])) { ?>
             </div> 
         <div class="form-group">
                 <label for="lhksh">Ημερομηνία Λήξης</label>
-                <input type="date" id="lhksh" name="lhksh" required class="form-control">
+                <input type="date" id="lhksh" name="lhksh" class="form-control">
             </div>
         
         <button style="float: left" type="submit" name="AddErgo" id="AddErgo" value="Προσθήκη" class="btn btn-info "><span class="glyphicon glyphicon-plus-sign"></span> Καταχώρηση Έργου</button>

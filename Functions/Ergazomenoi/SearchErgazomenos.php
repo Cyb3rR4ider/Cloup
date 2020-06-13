@@ -87,14 +87,14 @@ else {
     $a[$i++] = "1";
 
 
-    if ($_POST['eponymo'] !== "") {
+   if ($_POST['eponymo'] !== "") {
         $w = $w . " and Eponymo_ergazom like ? ";
         $a[$i++] = "%" . $_POST['eponymo'] . "%";
     }
 
     if ($_POST['kwd_ergazomenou'] !== "") {
         $w = $w . " and kwd_ergazomenou = ? ";
-        $a[$i++] = "%" . $_POST['kwd_ergazomenou'] . "%";
+        $a[$i++] = $_POST['kwd_ergazomenou'] ;
     }
     if ($_POST['onoma'] !== "") {
         $w = $w . " and Onoma_Ergazom like ? ";

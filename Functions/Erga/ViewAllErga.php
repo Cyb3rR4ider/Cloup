@@ -33,7 +33,7 @@ session_start();
                 <?php
                 $DB = new Database();
                 $DB->connect();
-                $res = $DB->execute("SELECT `kwd_ergou`, `perigrafh_ergou`, `finish_date`, `start_date` FROM `ergo`", []);
+                $res = $DB->execute("SELECT `kwd_ergou`, `perigrafh_ergou`, `finish_date`, `start_date` FROM `ergo` where kwd_ergou !=0 ", []);
                 while ($row = $res->fetch()) {
                     echo "<td>" . $row['kwd_ergou'] . "</td>";
                     echo "<td>" . $row['perigrafh_ergou'] . "</td>";

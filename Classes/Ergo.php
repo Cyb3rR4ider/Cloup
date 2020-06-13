@@ -5,7 +5,7 @@ class Ergo {
     var $finish_date;
     var $start_date;
     
-    function __construct(){
+    public function __construct(){
         $this->kwd_ergou  = -1;
         $this->perigrafh_ergou = "";
         $this->finish_date = 0000-00-00;
@@ -21,6 +21,11 @@ class Ergo {
      function getDb() {
         $DB = new Database();
         $DB->getErgο($this);
+    }
+    
+    function updateDb() {
+        $DB = new Database();
+        $DB->updateErgo($this);
     }
     
 }//Class Ergo ends here

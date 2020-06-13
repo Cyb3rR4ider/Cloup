@@ -40,7 +40,7 @@ session_start();
       <ul class="dropdown-menu">
         <li><a href="Functions/Erga/AddErgo.php">Προσθήκη Έργου</a></li>
         <li><a href="Functions/Erga/ViewAllErga.php">Προβολή Όλων των Έργων</a></li>
-        <li><a href="#">Submenu 2-3</a></li>                        
+        <li><a href="Functions/Erga/SearchErgo.php">Αναζήτηση Έργων</a></li>                    
       </ul>
     </li>
     <li class="dropdown">
